@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitch Multi POV Display</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Add Channel Section -->
+  <h2>Add Channel</h2>
+  <input type="text" id="addChannelInput" placeholder="Enter Twitch Channel">
+  <button id="addChannelButton">Add Channel</button>
+  <h2>Twitch Channels</h2>
+    <ul id="channel-list"></ul> <!-- List of added channels -->
+
+  <h2>Layout : <input type="number" id="col-input" min="1" value="2"></h2>
+  <!-- Channel Stream Display Section -->
+  <div id="channel-wrapper"> <!-- The wrapper for the channel cards --> </div>
+
+
+
+
+  <!-- TEMPLATE -->
+  <!-- List Item Template (Hidden) -->
+  <template id="list-item-template">
+    <li class="channel-list-item">
+      <div>
+        <span class="channel-name"></span>
+      </div>
+      <!-- Rounded switch for toggle visibility -->
+      <div>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div>
+        <button class="remove-button">Remove Channel</button>
+      </div>
+    </li>
+  </template>
+
+  <!-- Channel Template for Stream Embeds -->
+  <template id="channel-template">
+    <div class="channel-card">
+      <span class="channel-info">
+        <h3 class="channel-name"></h3><img src="expand.svg">
+      </span>
+      <iframe class="channel-iframe" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </template>
+
+  <script src="layout.js"></script>
+</body>
+
+</html>
