@@ -58,6 +58,7 @@ function updateVisibility() {
 function renderChannels() {
   list.innerHTML = "";
 
+  const parentDomain = window.location.hostname;
   channels.forEach((channel) => {
     const listItem = listItemTemplate.content.cloneNode(true);
     const li = listItem.querySelector("li");
@@ -92,7 +93,7 @@ function renderChannels() {
       cardElem.id = `card-${channel}`;
       cardElem.querySelector(".channel-info").querySelector(".channel-name").textContent = channel;
       cardElem.querySelector(".channel-iframe").src =
-        `https://player.twitch.tv/?channel=${channel}&parent=localhost&autoplay=true&muted=true`;
+        `https://player.twitch.tv/?channel=${channel}&parent=${parentDomain}&autoplay=true&muted=true`;
 
       channelWrapper.appendChild(cardElem);
     }
